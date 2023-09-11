@@ -50,7 +50,8 @@
 
     function slide() {
         // slide next
-        page.style.left = -page.clientWidth * page_index + "px";
+        page.style.left = -page_index * 100 + "%";
+        // page.style.left = -page.clientWidth * page_index + "px";
     }
 
     function start() {
@@ -146,6 +147,11 @@
         font-family: 'Nanum Myeongjo', serif;
     }
 
+    :global(body,html) {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
     :global(body) {
         margin: 0;
         padding-top: 100px;
@@ -154,13 +160,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        overflow-x: hidden;
     }
 
     .test-view {
         display: flex;
         width: 100%;
-
         position: relative;
         left: 0;
         transition: left 0.15s;
@@ -171,7 +175,6 @@
         flex-direction: column;
         align-items: center;
         overflow: hidden;
-
         flex-shrink: 0;
         width: 100%;
     }
