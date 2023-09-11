@@ -50,19 +50,17 @@
 
     function slide() {
         // slide next
+        page_index = page_index + 1;
         page.style.left = -page_index * 100 + "%";
         // page.style.left = -page.clientWidth * page_index + "px";
     }
 
     function start() {
         redsuninthesky.play();
-        page_index = page_index + 1;
         slide();
     }
 
     function correct(event) {
-        page_index = page_index + 1;
-
         credit_added = event.detail.credit;
         credit = credit + credit_added;
         is_correct = true;
